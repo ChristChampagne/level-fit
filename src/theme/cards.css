@@ -1,0 +1,14 @@
+.like-button {
+  position: absolute;
+  top: 60px;
+  left: 260px;
+}
+
+.icono {
+  font-size: 2rem;
+  position: absolute;
+}
+
+.img-blur {
+  filter: blur(4px);
+}
