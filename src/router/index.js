@@ -7,6 +7,7 @@ import Axios from '../views/AcordionAxios.vue'
 import ModalParent from '../views/ModalParent.vue'
 import LoginPrincipal from '../views/Login.vue'
 import NuevoCalendario from '../views/Calendario.vue'
+import Slider_LevelFit from '../views/slider_levelfit.vue'
 
 const routes = [
   {
@@ -52,6 +53,11 @@ const routes = [
     path:'/calendario',
     name:"Calendario",
     component:NuevoCalendario
+  },
+  {
+    path:'/slider',
+    name:"Slider LevelFit",
+    component:Slider_LevelFit
   }
 
 ]
