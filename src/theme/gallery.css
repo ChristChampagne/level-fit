@@ -1,7 +1,10 @@
 .img-principal__hpesas{
-    display: block;
+    position:relative;
     border-radius: 20px;
     width: 100%;
+    margin: 0px;
+    padding: 10px;
+    z-index: -1;
 }
 .img-principal__fotos-row3{
     margin: 1%;
@@ -26,14 +29,5 @@
     border-radius: 20px;
 }
 
-.heart-outline{
-color: red;
-position:absolute;
-/* display: flexbox; */
-  height:60%;
-  width:10%;
-  z-index: 1;
-  /* top: 65%; */
-  right : 100%;
-    /* margin-top: 25px; */
-}
+
+
