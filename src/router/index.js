@@ -8,6 +8,8 @@ import ModalParent from '../views/ModalParent.vue'
 import LoginPrincipal from '../views/Login.vue'
 import NuevoCalendario from '../views/Calendario.vue'
 import Slider_LevelFit from '../views/slider_levelfit.vue'
+import FooterP from '../views/footer.vue'
+import GaleriaP from '../views/Gallery.vue'
 
 const routes = [
   {
@@ -58,7 +60,17 @@ const routes = [
     path:'/slider',
     name:"Slider LevelFit",
     component:Slider_LevelFit
-  }
+  },
+  {
+    path:'/footer',
+    name:'Footer',
+    component: FooterP
+  },
+  {
+    path:'/galeria',
+    name:'Galeria',
+    component: GaleriaP
+  },
 
 ]
 
