@@ -8,22 +8,29 @@
 
     <ion-content :fullscreen="true">
       <ion-card v-for="el in card" :key="el.id">
-       <div class="img-container__blur" :style="{ backgroundImage: 'url(' + el.portada +')' ,fontSize: '12px' }">
-        <ion-img class="img-container__front" :src="el.portada"></ion-img>
+       <div class="" :style="{ backgroundImage: 'url(' + el.portada +')' ,fontSize: '12px' }"
+          style="
+            background-position: bottom;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+          "
+        >
+        <ion-img style="max-width:350px;margin: 0 auto;" :src="el.portada"></ion-img>
        </div> 
             
-        <ion-fab class="fab-container" horizontal="end">
-          <ion-fab-button class="fab-container__button">
-            <span class="fab-button__span">+</span>
+        <ion-fab horizontal="end">
+          <ion-fab-button style="margin-top: -30px">
+            <span>+</span>
           </ion-fab-button>
         </ion-fab>
         <ion-card-header>
           <ion-card-subtitle>{{ el.name }}</ion-card-subtitle>
-          <div class="song-container">
+          <div class="song-container" style="display: flex;align-items: center; justify-content: space-between;">
             <ion-card-title class="song-container__name--blue">{{ el.nombre }}</ion-card-title>
-            <ion-card-subtitle class="song-container__duration">{{ el.duracion }} </ion-card-subtitle>
+            <ion-card-subtitle class="song-container__duration" style="font-size:12px;padding: 5px;background: #f1f1f1;border-radius: 4px;">{{ el.duracion }} </ion-card-subtitle>
           </div>
-          <ion-card-subtitle class="card-header__year">{{ el.año }}</ion-card-subtitle>
+          <ion-card-subtitle style="font-size:12px;padding: 5px;background: #f1f1f1;border-radius: 4px; width: fit-content;">{{ el.año }}</ion-card-subtitle>
           <ion-card-subtitle>Autor: {{ el.autor }}</ion-card-subtitle>
         </ion-card-header>
 

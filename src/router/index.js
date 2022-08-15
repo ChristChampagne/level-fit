@@ -1,20 +1,17 @@
-import { createRouter, createWebHistory } from '@ionic/vue-router'; 
-import HomePage from '../views/HomePage.vue';
-import ListPage from '../views/List.vue';
-import CardPage from '../views/Card.vue';
-import Examen from  '../views/Examen.vue';
-import Axios from '../views/AcordionAxios.vue'
-import ModalParent from '../views/ModalParent.vue'
-import LoginPrincipal from '../views/Login.vue'
-import NuevoCalendario from '../views/Calendario.vue'
-import Slider_LevelFit from '../views/slider_levelfit.vue'
+import { createRouter, createWebHistory } from '@ionic/vue-router';
+import HomePage from '../views/HomePage.vue'
+import ListPage from '../views/List.vue'
+import CardsPage from '../views/Card.vue'
+import SeriesPage from '../views/Examen.vue'
+import ChipsPage from '../views/chip.vue'
 import FooterP from '../views/footer.vue'
 import GaleriaP from '../views/Gallery.vue'
-
+import MenuS_ from '../views/Menu.vue'
+// import Menu_ionic from '../views/Menu.vue'
 const routes = [
   {
     path: '/',
-    redirect: '/login'
+    redirect: '/home'
   },
   {
     path: '/home',
@@ -29,37 +26,17 @@ const routes = [
   {
     path: '/cards',
     name: 'Card',
-    component: CardPage
+    component: CardsPage
   },
   {
-    path: '/examen',
-    name: 'Examen',
-    component:Examen
+    path:'/examen',
+    name:'Examen',
+    component: SeriesPage
   },
   {
-    path:'/axios',
-    name:'Axios',
-    component:Axios
-  },
-  {
-    path:'/modal',
-    name:'ModalParents',
-    component:ModalParent
-  },
-  {
-    path:'/login',
-    name:"Login",
-    component:LoginPrincipal
-  },
-  {
-    path:'/calendario',
-    name:"Calendario",
-    component:NuevoCalendario
-  },
-  {
-    path:'/slider',
-    name:"Slider LevelFit",
-    component:Slider_LevelFit
+    path:'/chips',
+    name:'Chip',
+    component: ChipsPage
   },
   {
     path:'/footer',
@@ -71,7 +48,11 @@ const routes = [
     name:'Galeria',
     component: GaleriaP
   },
-
+   {
+     path:'/menu',
+     name:'Menu',
+     component:MenuS_
+   }
 ]
 
 const router = createRouter({

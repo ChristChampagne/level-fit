@@ -1,4 +1,17 @@
 <template>
+ <ion-header :translucent="false">
+      <div>
+        <div class="levelfit_toolbar">
+          <div class="levelfit_toolbar_icon"></div>
+          <h1 class="tittle_header">Level Fit</h1>
+          <div>
+            <ion-button class="btn-menu" @click="openMenu()"
+              ><ion-icon name="grid-outline"></ion-icon
+            ></ion-button>
+          </div>
+        </div>
+      </div>
+    </ion-header>
   <div class="bar bar-subheader bar-royal">
     <div class="title">LevelFit ©</div>
   </div>
@@ -36,10 +49,9 @@
 </template>
 
 <script>
-import {} from "@ionic/vue";
+import {menuController} from "@ionic/vue";
 // import { IonFooter, IonTitle, IonToolbar } from "@ionic/vue";
 import { defineComponent } from "vue";
-
 export default defineComponent({
   name: "FooterP",
   components: {
@@ -47,6 +59,11 @@ export default defineComponent({
     // IonFooter,
     // IonTitle,
     // IonToolbar,
+  },
+   methods: {
+    openMenu() {
+      menuController.open("app-menu");
+    },
   },
 });
 </script>

@@ -32,9 +32,9 @@
     "src/**/*.jsx",
     "src/**/*.vue",
     "tests/**/*.js",
-    "tests/**/*.jsx", 
-    "src/main.js",
-    "src/router/index.js"
+    "tests/**/*.jsx",
+    "src/router/index.js",  
+    "src/main.js"
   ],
   "exclude": [
     "node_modules"

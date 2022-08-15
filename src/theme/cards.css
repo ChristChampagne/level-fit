@@ -1,14 +1,37 @@
-.like-button {
-  position: absolute;
-  top: 60px;
-  left: 260px;
+.img-container__blur {
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
 }
 
-.icono {
-  font-size: 2rem;
-  position: absolute;
+.img-container__front {
+    max-width: 350px;
+    margin: 0 auto;
 }
 
-.img-blur {
-  filter: blur(4px);
+.fab-container__button {
+    margin-top: -30px;
+}
+
+.song-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.song-container__duration {
+    font-size: 12px;
+    padding: 5px;
+    background: #f1f1f1;
+    border-radius: 4px;
+
+}
+
+.card-header__year {
+    font-size: 12px;
+    padding: 5px;
+    background: #f1f1f1;
+    border-radius: 4px;
+    width: fit-content;
 }

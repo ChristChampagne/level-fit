@@ -8,112 +8,124 @@
     <ion-content :fullscreen="true">
       <ion-list ref="elementSliding">
         <ion-list-header>
-          <ion-label><h1>Lista de Canciones</h1></ion-label>
+          <ion-label>
+            <h1>Lista de Canciones</h1>
+          </ion-label>
         </ion-list-header>
-        <ion-item-sliding v-for="videogame in VideoGamesList" :key="videogame.id">
+        <ion-item-sliding v-for="el in lista" :key="el.id">
           <ion-item>
-            <ion-label>{{ videogame.name }}</ion-label>
+            <ion-card>
+              <ion-img :src="el.portada"></ion-img>
+              <ion-card-header>
+                <ion-card-title>{{ el.name }}</ion-card-title>
+              </ion-card-header>
+
+              <ion-card-content>
+                {{ el.año }}
+                {{ el.autor }}
+                {{ el.duracion }}
+              </ion-card-content>
+            </ion-card>
           </ion-item>
           <ion-item-options side="end">
-            <ion-item-option @click="addFav(videogame)">
-              <ion-icon
-                size="small"
-                v-if="videogame.isFav"
-                src="/assets/svg/heart.svg"
-              ></ion-icon>
-              <ion-icon
-                size="small"
-                v-else
-                src="/assets/svg/heart-outline.svg"
-              ></ion-icon>
+            <ion-item-option @click="addFav(el)">
+              <ion-icon size="small" v-if="el.isFav" src="/assets/svg/heartf.svg"></ion-icon>
+              <ion-icon size="small" v-else src="/assets/svg/heart.svg"></ion-icon>
             </ion-item-option>
           </ion-item-options>
         </ion-item-sliding>
       </ion-list>
       <ion-list v-if="myFavs.length">
         <ion-list-header>
-          <ion-label><h1>Lista de Canciones Favoritas</h1></ion-label>
+          <ion-label>
+            <h1>Lista de Canciones Favoritas</h1>
+          </ion-label>
         </ion-list-header>
         <ion-item v-for="el in myFavs" :key="el">
           <ion-item>
-            <ion-label>{{el}}</ion-label>
-
+            <ion-label>{{ el }}</ion-label>
           </ion-item>
         </ion-item>
       </ion-list>
     </ion-content>
   </ion-page>
 </template>
+
 <script>
 import {
-  IonItemOptions,
-  IonItemOption,
-  IonItemSliding,
-  IonContent,
-  IonHeader,
-  IonIcon,
   IonPage,
-  IonTitle,
+  IonHeader,
   IonToolbar,
+  IonTitle,
   IonList,
   IonItem,
   IonLabel,
+  IonItemSliding,
+  IonItemOption,
+  IonItemOptions,
+  IonIcon,
+  IonCard,
+  IonCardHeader,
+  IonCardContent,
+  IonCardTitle,
+  IonImg,
 } from "@ionic/vue";
-import { defineComponent } from "vue";
 
+import { defineComponent } from "vue";
 export default defineComponent({
   name: "ListPage",
   components: {
-    IonItemOptions,
-    IonItemOption,
-    IonItemSliding,
-    IonContent,
-    IonHeader,
     IonPage,
-    IonTitle,
+    IonHeader,
     IonToolbar,
+    IonTitle,
     IonList,
     IonItem,
     IonLabel,
+    IonItemSliding,
+    IonItemOption,
+    IonItemOptions,
     IonIcon,
+    IonCard,
+    IonCardHeader,
+    IonCardContent,
+    IonCardTitle,
+    IonImg
   },
-
-  data: function () {
+  data() {
     return {
-      VideoGamesList: [
-        { id: 1, name: "Los Botones Azules", art: "assets/imgfav/1.png", year:2022, artist:"Junior H & Luis R Conriquez", isFav: false, long:"3:50"},
-        { id: 2, name: "No Me Pesa", art: "assets/imgfav/1.png", year:2020, artist:"Junior H", isFav: false, long:"2:20"},
-        { id: 3, name: "Yo Tambien Soy De Durango", art: "assets/imgfav/3.png", year:2021, artist:"Alterados de la sierra", isFav: false,long:"4:01"},
-        { id: 4, name: "Moscow Mule", art: "assets/imgfav/bad.png", year:2022, artist:"Bad Bunny", isFav: false,long:"1:50"},
-        { id: 5, name: "Ojitos lindos", art: "assets/imgfav/bad.png", year:2022, artist:"Bad Bunny", isFav: false,long:"2:50"},
-        { id: 6, name: "Ojos Colorados", art: "assets/imgfav/bad.png", year:2022, artist:"Bad Bunny", isFav: false,long:"4:00" },
-        { id: 7, name: "Despues De La Playa", art: "assets/imgfav/bad.png", year:2022, artist:"Bad Bunny", isFav: false,long:"3:00"},
-        { id: 8, name: "Party", art: "assets/imgfav/bad.png", year:2022, artist:"Bad Bunny", isFav: false,long:"4:00"},
-        { id: 9, name: "Un Ratito", art: "assets/imgfav/bad.png", year:2022, artist:"Bad Bunny", isFav: false,long:"5:00"},
-        { id: 10, name: "Me Porto Bonito", art: "assets/imgfav/bad.png", year:2022, artist:"Bad Bunny", isFav: false,long:"6:00"},
-        { id: 11, name: "Efecto", art: "assets/imgfav/bad.png", year:2022, artist:"Bad Bunny", isFav: false,long:"4:00"},
-        { id: 12, name: "Me Fui De Vacaciones", art: "assets/imgfav/bad.png", year:2022, artist:"Bad Bunny", isFav: false,long:"3:00"},
-        { id: 13, name: "Tarot", art: "assets/imgfav/bad.png", year:2022, artist:"Bad Bunny", isFav: false,long:"3:50"},
-        { id: 14, name: "Un Coco", art: "assets/imgfav/bad.png", year:2022, artist:"Bad Bunny", isFav: false,long:"2:23"},
-        { id: 15, name: "Aguacero", art: "assets/imgfav/bad.png", year:2022, artist:"Bad Bunny", isFav: false,long:"2:00"},
+      lista: [
+        { id: 1, name: "Tiago PZK, LIT killah - Entre Nosotros", portada: "assets/img/entrenosotros.jpg", año: 2019, autor: "LIT killah | Tiago PZK", duracion: "3m 12s", isFav: false },
+        { id: 2, name: "Joji - Glimpse of Us", portada: "", año: 2020, autor: "", duracion: "3m 12s", isFav: false },
+        { id: 3, name: "Charlie Puth - Light Switch", portada: "", año: 2020, autor: "", duracion: "3m 12s", isFav: false },
+        { id: 4, name: "The Kid LAROI - Thousand Miles", portada: "", año: 2020, autor: "", duracion: "3m 12s", isFav: false },
+        { id: 5, name: "PARTIENDONOS LA MADRE ZARCORT ft. Kairo", portada: "", año: 2020, autor: "", duracion: "3m 12s", isFav: false },
+        { id: 6, name: "David Dallas - Runnin’", portada: "", año: 2020, autor: "", duracion: "3m 12s", isFav: false },
+        { id: 7, name: "Travis Scott & Kendrick Lamar “Goosebumps” - 21 Savage (Remix)", portada: "", año: 2020, autor: "", duracion: "3m 12s", isFav: false },
+        { id: 8, name: "Harry Styles - As It Was", portada: "", año: 2020, autor: "", duracion: "3m 12s", isFav: false },
+        { id: 9, name: "Lecrae - This is My Time", portada: "", año: 2020, autor: "", duracion: "3m 12s", isFav: false },
+        { id: 10, name: "Wake Me Up Before You Go / Wham! ", portada: "", año: 2020, autor: "", duracion: "3m 12s", isFav: false },
+        { id: 11, name: "2Pac - California Love feat. Dr. Dre", portada: "", año: 2020, autor: "", duracion: "3m 12s", isFav: false },
+        { id: 12, name: "Will Paquin - Chandelier", portada: "", año: 2020, autor: "", duracion: "3m 12s", isFav: false },
+        { id: 13, name: "JVKE - this is what falling in love feels like", portada: "", año: 2020, autor: "", duracion: "3m 12s", isFav: false },
+        { id: 14, name: "TRUENO- FEEL ME??", portada: "", año: 2020, autor: "", duracion: "3m 12s", isFav: false },
+        { id: 15, name: "Bad Bunny - Tití Me Preguntó", portada: "", año: 2020, autor: "", duracion: "3m 12s", isFav: false },
       ],
-      myFavs: [],
-    };
+      myFavs: []
+    }
   },
   methods: {
-    addFav: function (videogame) {
-      console.log(videogame);
-      if (!videogame.isFav) {
-        // This se utiliza para de este metodo y de este componente toma la variabla myfav y darle un push al nuevo array.
-        this.myFavs.push(videogame.name);
-        videogame.isFav = true;
+    addFav: function (el) {
+      if (!el.isFav) {
+        this.myFavs.push(el.name)
+        el.isFav = true;
       } else {
-        this.myFavs = this.myFavs.filter((item) => item !== videogame.name);
-        videogame.isFav = false;
+        this.myFavs = this.myFavs.filter(item => item !== el.name)
+        el.isFav = false;
       }
-
       this.$refs.elementSliding.$el.closeSlidingItems();
-    },
+    }
   },
+
 });
 </script>
