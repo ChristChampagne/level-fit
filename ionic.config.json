@@ -1,0 +1,7 @@
+{
+  "name": "ionicapp3",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
