@@ -2,13 +2,13 @@
   <div id="principal">
     <ion-grid>
       <ion-row>
-        <ion-col size="12">
+        <ion-col size="12" class="mb-5">
           <div class="text-center">
             <img
               src="../../public/assets/img/login-icon.jpg"
               alt=""
               class="mt-5"
-              style="width: 60%"
+              style="width: 20%"
             />
           </div>
         </ion-col>
@@ -19,27 +19,40 @@
               ¡Ingresa a <a style="color: red">LevelFit!</a>
             </h1>
           </div>
-          <ion-input
-            style="border: 3px solid #8c2c23; border-radius: 15px; height: 4rem"
+          <ion-input placeholder="Ingresa tu e-mail" type="email" class="pl-2"
+            style="border: 3px solid #8c2c23; border-radius: 15px; height: 4rem;"
           ></ion-input>
 
-          <ion-input
+          <ion-input placeholder="Ingresa tu contraseña" type="password" class="pl-2"
             style="border: 3px solid #8c2c23; border-radius: 15px; height: 4rem; margin-top:1rem"
           ></ion-input>
           <div class="text-left">
+            
+            <div class='text-center mt-3'>
             <a class="mr-3 ml-3" style="font-size: 0.8rem; font-weight: bold"
               >¿Olvidaste tu contraseña? <a>Registrarte</a></a
             >
+            </div>
           </div>
 
           <div class="text-center mt-5">
-            <ion-button color="danger" style="width:13rem; font-weight:bold; height:2.5rem">Ingresar</ion-button>
+            <ion-button color="danger" style="width:13rem; font-weight:bold; height:2.5rem" href="/inicio">Ingresar</ion-button>
           </div>
         </ion-col>
       </ion-row>
     </ion-grid>
   </div>
 </template>
+
+<style>
+
+ion-input{
+  outline:none !important;
+
+}
+
+
+</style>
 
 <script>
 import {} from "@ionic/vue";

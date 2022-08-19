@@ -35,7 +35,7 @@
           display: flex;
           justify-content: space-around;
           margin: 0rem;
-          margin-top: 0.5rem;
+          margin-top: 2rem;
         "
       >
         <div class="semana" style="background-color: #389c16">
@@ -67,7 +67,7 @@
           <img src="/assets/fotos/box.png" alt="" />
         </div>
       </div>
-      <div class="imagenbottom">
+      <div class="imagenbottom m-3">
         <img src="/assets/fotos/girlboxing.jpg" alt="" srcset="" />
       </div>
       

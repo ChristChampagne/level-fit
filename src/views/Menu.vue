@@ -1,21 +1,21 @@
 <template>
-  <ion-menu menu-id="app-menu" content-id="main-content">
+  <ion-menu menu-id="app-menu" content-id="main-content" >
     <ion-header>
       <ion-toolbar>
-        <div class="ion_toolbar_style">
+        <div class="ion_toolbar_style" style="background-color:#D42323">
           <img
             class="ion_toolbar_image"
             src="/assets/fotos/avatar_menu.png"
             alt=""
           />
           <div>
-            <ion-title class="title_ionic">Ashfak Sayem</ion-title>
-            <ion-title class="subtitle_ionic">ashfaksayem@gmail.com</ion-title>
+            <ion-title class="title_ionic" style="color:white">Ashfak Sayem</ion-title>
+            <ion-title class="subtitle_ionic" style="color:white">ashfaksayem@gmail.com</ion-title>
           </div>
         </div>
       </ion-toolbar>
     </ion-header>
-    <ion-content>
+    <ion-content >
       <ion-list>
         <ion-item class="fill-red">
           <div class="ion_item_red"></div>
@@ -30,9 +30,7 @@
                 <ion-label><a href='/inicio' router-link="/inicio">Inicio</a></ion-label>
               </div>
 
-              <div class="notificaciones">
-                <p>2</p>
-              </div>
+ 
             </div>
           </div>
         </ion-item>
@@ -49,9 +47,7 @@
                 <ion-label><a href='/acerca-de' router-link="/acerca-de">Acerca De</a></ion-label>
               </div>
 
-              <div class="notificaciones">
-                <p>2</p>
-              </div>
+
             </div>
           </div>
         </ion-item>
@@ -100,10 +96,6 @@
                 />
                               <ion-label><a href='/calendario' router-link="/calendario">Calendario</a></ion-label>
 
-              </div>
-
-              <div class="notificaciones">
-                <p>2</p>
               </div>
             </div>
           </div>

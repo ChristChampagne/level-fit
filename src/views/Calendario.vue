@@ -18,7 +18,7 @@
       <ion-grid>
         <ion-row>
           <ion-col size="12">
-            <ion-slides>
+            <ion-slides class="m-3">
               <ion-slide>
                 <div style="width=100%">
                   <img
@@ -39,9 +39,10 @@
               </ion-slide>
             </ion-slides>
           </ion-col>
-          <ion-col size="12">
+
+          <div class="container mt-3">
             <ion-datetime locale="es-ES" presentation="date"> </ion-datetime>
-          </ion-col>
+          </div>
 
           <ion-col size="12" class="d-flex">
           
@@ -160,7 +161,7 @@
             
           </ion-col>
           <ion-col size="12">
-            <div class="text-center">
+            <div class="text-center mb-5">
               <ion-button color="transparent" style="width: 15rem; background-color:red !important; border-radius:1rem;"
                 >Aceptar</ion-button
               >

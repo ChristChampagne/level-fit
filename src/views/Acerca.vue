@@ -21,13 +21,13 @@
         <h1>Acerca de Level Fit</h1>
       </div>
 
-      <div style="display: inline-flex; width: 100vw">
-        <div class="imagen">
+      <div style="display: inline-block; width:100%">
+        <div class="imagen w-100">
           <img src="/assets/fotos/benchpress.jpg" alt="" />
         </div>
 
-        <div class="imagen">
-          <div class="contenido_card">
+        <div class="imagen container w-100">
+          <div class="contenido_card w-100">
             <div class="icono_mision">
               <img src="../../public/assets/svg/vision.png" alt="" srcset="" />
             </div>
@@ -41,7 +41,7 @@
             </div>
           </div>
 
-          <div class="contenido_card">
+          <div class="contenido_card w-100">
             <div class="icono_mision">
               <img src="../../public/assets/svg/vision.png" alt="" srcset="" />
             </div>
@@ -61,9 +61,7 @@
 </template>
 
 <style>
-.card_text {
- 
-}
+
 
 .contenido_card {
   display: flex;

@@ -87,7 +87,7 @@
       </ion-row>
     </ion-grid>
 
-    <ion-grid >
+    <ion-grid class="mb-5">
       <ion-row>
         <ion-col size="6">
             <div style="border-radius:20px">
